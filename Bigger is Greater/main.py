@@ -13,11 +13,12 @@ def biggerIsGreater(w):
             key = lst[i-1]
             first_part = lst[:i - 1]
             last_part = sorted(lst[i - 1:])
-            center = last_part[last_part.index(key) + 1]
+            center = last_part[''.join(last_part).rfind(key) + 1]
             last_part.remove(center)
             return ''.join(first_part) + center + ''.join(last_part)
 
     return 'no answer'
 
 if __name__ == '__main__':
-    print(biggerIsGreater('ab'))
+    print(biggerIsGreater('pqommldkafmnwzidydgjghxcbnwyjdxpvmkztdfmcxlkargafjzeye'))
+    # Expected :'pqommldkafmnwzidydgjghxcbnwyjdxpvmkztdfmcxlkargafjzyee'
